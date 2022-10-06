@@ -1,0 +1,85 @@
+.bottom-component-main {
+  width: 100%;
+  padding: 0 30px;
+}
+.bottom-component-container {
+  display: flex;
+  margin: 5px 0;
+  background-color: rgb(228, 224, 224);
+}
+.bottom-left-div {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  color: gray;
+}
+.home-img-div {
+  width: 100px;
+  height: 120px;
+}
+.home-img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.bottom-center-div {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+.bottom-center-div p {
+  color: gray;
+}
+.stock-div {
+  display: flex;
+  height: fit-content;
+  align-items: center;
+  /* background-color: aqua; */
+  color: rgb(22, 228, 22);
+}
+.stock-div svg {
+  margin-right: 8px;
+}
+.bottom-right-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+.add-to-cart-btn-div form {
+  display: flex;
+}
+.add-to-cart-btn-div form input:first-child {
+  width: 40px;
+  height: 25px;
+  margin-right: 4px;
+  border: none;
+  outline: none;
+  border: 1px solid gray;
+  text-align: center;
+  font-weight: 600;
+}
+.add-to-cart-btn-div form button {
+  width: 30px;
+  height: 25px;
+  background-color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-to-cart-btn-div form button svg {
+  color: #fff;
+  font-size: 18px;
+}
+.add-to-cart-btn-div form input[type="checkbox"] {
+  width: 20px;
+  height: 15px;
+  margin-left: 6px;
+  margin-top: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid gray;
+}
