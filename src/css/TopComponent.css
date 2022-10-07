@@ -12,24 +12,56 @@
   display: flex;
   align-items: center;
 }
-.product-select-div select {
-  padding: 5px 20px;
-  outline: none;
-  border-radius: 5px;
+.product-select-div {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
-.product-select-div select option[value=""][disabled] {
-  display: none;
-  padding-right: 30px;
+.dropdown {
+  width: fit-content;
+  height: 40px;
+  position: relative;
+  user-select: auto;
+  display: flex;
+  align-items: center;
 }
-.size-select-div select {
-  padding: 5px 20px;
-  outline: none;
-  margin: 0 10px;
-  border-radius: 5px;
+.dropdown-btn {
+  width: 120px;
+  height: 40px;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-left: 7px;
+  cursor: pointer;
 }
-.size-select-div select option[value=""][disabled] {
-  display: none;
-  padding-right: 30px;
+.dropdown-btn span svg {
+  font-size: 25px;
+}
+.dropdown .dropdown-content {
+  width: 120px;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+.dropdown .dropdown-content .dropdown-item {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dropdown .dropdown-content .dropdown-item:hover {
+  background-color: gray;
+}
+.size-select-div {
+  margin: 0 18px;
 }
 .reset-btn-div button {
   padding: 5px 19px;

@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import "../css/TopComponent.css";
 import { HiSearch } from "react-icons/hi";
 import { BsArrowCounterclockwise } from "react-icons/bs";
+import { MdArrowDropDown } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { searchItem } from "../redux/searchSlice";
 import { useDispatch } from "react-redux";
 
-const TopComponent = ({ setGetCategory, setGetSize }) => {
+const TopComponent = ({ getCategory, setGetCategory, getSize, setGetSize }) => {
+  const [isActive, setIsActive] = useState(false);
+  const [isActive1, setIsActive1] = useState(false);
   const [query, setQuery] = useState("");
 
-  const [category, setCategory] = useState("");
-  const [size, setSize] = useState("");
+  const options = ["All", "T-shirt", "shirt", "jacket"];
+  const options1 = ["All", "L", "XL", "XXL"];
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,42 +23,68 @@ const TopComponent = ({ setGetCategory, setGetSize }) => {
     setQuery("");
   };
 
-  // useEffect(() => {
-  //   setGetCategory(category);
-  // }, [setGetCategory, category]);
-  const getCategoryFun = (cate) => {
-    setCategory(cate);
-  };
-
-  const getSizeFun = (siz) => {
-    setSize(siz);
-  };
-
-  // useEffect(() => {
-  //   setGetSize(size);
-  // }, [setGetSize, size]);
-
   return (
     <div className="top-component-main">
       <div className="top-component-left-div">
         <div className="product-select-div">
-          <select
-            onChange={(e) => getCategoryFun(e.target.value)}
-            value={category}
-          >
-            <option>All</option>
-            <option>T-Shirt</option>
-            <option>Shirt</option>
-            <option>Jacket</option>
-          </select>
+          <div className="dropdown">
+            <p style={{ fontWeight: "500" }}>Category</p>
+            <div
+              className="dropdown-btn"
+              onClick={() => setIsActive(!isActive)}
+            >
+              <span>{getCategory}</span>
+              <span>
+                <MdArrowDropDown />
+              </span>
+            </div>
+            {isActive && (
+              <div className="dropdown-content">
+                {options.map((option, index) => (
+                  <div
+                    key={index}
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      setGetCategory(option);
+                      setIsActive(false);
+                    }}
+                  >
+                    {option}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="size-select-div">
-          <select onChange={(e) => getSizeFun(e.target.value)} value={size}>
-            <option>All Size</option>
-            <option>L</option>
-            <option>XL</option>
-            <option>XXL</option>
-          </select>
+          <div className="dropdown">
+            <p style={{ fontWeight: "500" }}>Size</p>
+            <div
+              className="dropdown-btn"
+              onClick={() => setIsActive1(!isActive1)}
+            >
+              <span>{getSize}</span>
+              <span>
+                <MdArrowDropDown />
+              </span>
+            </div>
+            {isActive1 && (
+              <div className="dropdown-content">
+                {options1.map((option1, index) => (
+                  <div
+                    key={index}
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      setGetSize(option1);
+                      setIsActive1(false);
+                    }}
+                  >
+                    {option1}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="reset-btn-div">
           <button>
