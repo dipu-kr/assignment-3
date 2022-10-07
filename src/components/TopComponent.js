@@ -23,6 +23,10 @@ const TopComponent = ({ getCategory, setGetCategory, getSize, setGetSize }) => {
     setQuery("");
   };
 
+  const resetFun = (param) => {
+    setGetCategory(param);
+  };
+
   return (
     <div className="top-component-main">
       <div className="top-component-left-div">
@@ -87,7 +91,7 @@ const TopComponent = ({ getCategory, setGetCategory, getSize, setGetSize }) => {
           </div>
         </div>
         <div className="reset-btn-div">
-          <button>
+          <button onClick={() => resetFun("All")}>
             <BsArrowCounterclockwise />
             Reset
           </button>
