@@ -25,6 +25,7 @@ const TopComponent = ({ getCategory, setGetCategory, getSize, setGetSize }) => {
 
   const resetFun = (param) => {
     setGetCategory(param);
+    setGetSize("");
   };
 
   return (
