@@ -48,39 +48,6 @@ const BottomComponent = ({ getCategory, getSize }) => {
       setAllProducts(filteredProducts);
     }
   }, [getCategory]);
-  // ----------------------size filter-------------------
-  useEffect(() => {
-    if (getCategory === "All" && getSize === "All") {
-      setAllProducts(data);
-    }
-    if (
-      (getCategory === "T-shirt" && getSize === "L") ||
-      getSize === "XL" ||
-      getSize === "XXL"
-    ) {
-      const filteredProducts = data.filter((item) => item.name === "T-shirt");
-
-      setAllProducts(filteredProducts);
-    }
-    if (
-      (getCategory === "shirt" && getSize === "L") ||
-      getSize === "XL" ||
-      getSize === "XXL"
-    ) {
-      const filteredProducts = data.filter((item) => item.name === "shirt");
-
-      setAllProducts(filteredProducts);
-    }
-    if (
-      (getCategory === "jacket" && getSize === "L") ||
-      getSize === "XL" ||
-      getSize === "XXL"
-    ) {
-      const filteredProducts = data.filter((item) => item.name === "jacket");
-
-      setAllProducts(filteredProducts);
-    }
-  }, [getSize]);
 
   return (
     <div className="bottom-component-main">

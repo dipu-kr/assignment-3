@@ -6,9 +6,6 @@ import BottomComponent from "../components/BottomComponent";
 const Home = () => {
   const [getCategory, setGetCategory] = useState("");
   const [getSize, setGetSize] = useState("");
-  console.log("home get size : ", getSize);
-  // console.log(getCategory);
-  // console.log(getSize);
 
   return (
     <div>
