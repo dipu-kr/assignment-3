@@ -28,26 +28,63 @@ const BottomComponent = ({ getCategory, getSize }) => {
     }
   };
 
+  // --------------------filter category and size----------------
+
   useEffect(() => {
     if (getCategory === "All") {
-      setAllProducts(data);
+      if (getSize === "") {
+        setAllProducts(data);
+      } else {
+        if (getSize === "L" || "XL" || "XXL") {
+          const filteredProducts = data.filter((item) => item.size === getSize);
+
+          setAllProducts(filteredProducts);
+        }
+      }
     }
     if (getCategory === "T-shirt") {
       const filteredProducts = data.filter((item) => item.name === "T-shirt");
+      if (getSize === "") {
+        setAllProducts(filteredProducts);
+      } else {
+        if (getSize === "L" || "XL" || "XXL") {
+          const filteredSize = filteredProducts.filter(
+            (item) => item.size === getSize
+          );
 
-      setAllProducts(filteredProducts);
+          setAllProducts(filteredSize);
+        }
+      }
     }
     if (getCategory === "shirt") {
       const filteredProducts = data.filter((item) => item.name === "shirt");
+      if (getSize === "") {
+        setAllProducts(filteredProducts);
+      } else {
+        if (getSize === "L" || "XL" || "XXL") {
+          const filteredSize = filteredProducts.filter(
+            (item) => item.size === getSize
+          );
 
-      setAllProducts(filteredProducts);
+          setAllProducts(filteredSize);
+        }
+      }
     }
     if (getCategory === "jacket") {
       const filteredProducts = data.filter((item) => item.name === "jacket");
+      if (getSize === "") {
+        setAllProducts(filteredProducts);
+      } else {
+        if (getSize === "L" || "XL" || "XXL") {
+          const filteredSize = filteredProducts.filter(
+            (item) => item.size === getSize
+          );
 
-      setAllProducts(filteredProducts);
+          setAllProducts(filteredSize);
+        }
+      }
     }
-  }, [getCategory]);
+  }, [getCategory, getSize]);
 
   return (
     <div className="bottom-component-main">

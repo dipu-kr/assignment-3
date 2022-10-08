@@ -41,7 +41,7 @@ export const data = [
     img: product4,
     name: "jacket",
     color: "gray",
-    size: "XL",
+    size: "XXL",
     price: 80,
     stock: 2,
   },

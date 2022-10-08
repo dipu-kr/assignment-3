@@ -13,7 +13,7 @@ const TopComponent = ({ getCategory, setGetCategory, getSize, setGetSize }) => {
   const [query, setQuery] = useState("");
 
   const options = ["All", "T-shirt", "shirt", "jacket"];
-  const options1 = ["All", "L", "XL", "XXL"];
+  const options1 = ["L", "XL", "XXL"];
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
